@@ -12,13 +12,25 @@
 <body>
 <div id="content" class="content">
 <h1 class="title">Short Stories</h1>
+<div class="card" id="orgcdbdf98">
+<p>
+<a href="Your grandfather from the ashes.html">Your grandfather from the ashes</a>
+</p>
 
-<div id="outline-container-orga7e7552" class="outline-2">
-<h2 id="orga7e7552"><a href="Your grandfather from the ashes.html">Your grandfather from the ashes</a></h2>
 </div>
 
-<div id="outline-container-orgc8172d9" class="outline-2">
-<h2 id="orgc8172d9"><a href="Fuck you bitch.html">Fuck you bitch</a></h2>
+<div class="card" id="orgdca5b4e">
+<p>
+<a href="Fuck you bitch.html">Fuck you bitch!</a>
+</p>
+
+</div>
+
+<div class="card" id="org69845cd">
+<p>
+<a href="Here is one for you sonf of bitch.html">Here is for you son of the bitch</a>
+</p>
+
 </div>
 </div>
 </body>
