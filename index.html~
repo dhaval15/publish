@@ -12,18 +12,15 @@
 <body>
 <div id="content" class="content">
 <h1 class="title">HomePage</h1>
-<div id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="#orgb542e81">Your grandfather from ashes</a></li>
-</ul>
-</div>
-</div>
+<blockquote>
+<p>
+<a href="Your grand father from the ashes.html">Your grandfather from ashes</a>
+</p>
+</blockquote>
 
-<div id="outline-container-orgb542e81" class="outline-2">
-<h2 id="orgb542e81"><a href="Your grand father from the ashes.html">Your grandfather from ashes</a></h2>
-</div>
+<p>
+<code>ABC</code>
+</p>
 </div>
 </body>
 </html>

@@ -7,9 +7,9 @@
   --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 
   /* Default (light) theme */
-  --bg: #ffeedd;
+  --bg: #fbf1c7;
   --accent-bg: #f5f7ff;
-  --text: #212121;
+  --text: #282828;
   --text-light: #585858;
   --border: #ffccaa;
   --accent: #0d47a1;
@@ -17,6 +17,8 @@
   --preformatted: #444;
   --marked: #ffdd33;
   --disabled: #efefef;
+  --link: #689d6a;
+  --link-hover: #427b58;
 }
 
 /* Dark theme */
@@ -32,6 +34,8 @@
     --code: #f06292;
     --preformatted: #ccc;
     --disabled: #111;
+    --link: #83a598;
+    --link-hover: #458588;
   }
   /* Add a bit of transparancy so light media isn't so glaring in dark mode */
   img,
@@ -157,10 +161,12 @@ h3 {
 /* Format links & buttons */
 a,
 a:visited {
-  color: var(--accent);
+  color: var(--link);
+  text-decoration: none;
 }
 
 a:hover {
+  color: var(--link-hover);
   text-decoration: none;
 }
 
