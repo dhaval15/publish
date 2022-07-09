@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Digital Garden</title>
+<title>Short Stories</title>
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -200,16 +200,23 @@
                 </script>
 </head>
 <body>
+<div id="preamble" class="status">
+<a href = "index.html"> <h1> Digital Garden </h1> </a>
+<div> 
+  <a href="short_stories.html"> Short Stories </a>
+</div>
+</div>
 <div id="content" class="content">
-<h1 class="title">Digital Garden</h1>
-<div id="outline-container-org54c7cd1" class="outline-2">
-<h2 id="org54c7cd1"><a href="short_stories.html">Short Stories</a></h2>
+<h1 class="title">Short Stories</h1>
+
+<div id="outline-container-org17acf61" class="outline-2">
+<h2 id="org17acf61"><a href="Your grandfather from the ashes.html">Your grandfather from the ashes</a></h2>
 </div>
-<div id="outline-container-org98c9f1d" class="outline-2">
-<h2 id="org98c9f1d"><a href="blogs.html">Blogs</a></h2>
+<div id="outline-container-org8da7ee8" class="outline-2">
+<h2 id="org8da7ee8"><a href="Fuck you bitch.html">Fuck you bitch!</a></h2>
 </div>
-<div id="outline-container-org5f2bd32" class="outline-2">
-<h2 id="org5f2bd32"><a href="movie_reviews.html">Movie Reviews</a></h2>
+<div id="outline-container-org1024dd2" class="outline-2">
+<h2 id="org1024dd2"><a href="Here is one for you sonf of bitch.html">Here is for you son of the bitch</a></h2>
 </div>
 </div>
 </body>
