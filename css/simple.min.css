@@ -10,7 +10,7 @@
   --bg: #fbf1c7;
   --accent-bg: #f5f7ff;
   --text: #282828;
-  --text-light: #585858;
+  --text-light: #444444;
   --border: #ffccaa;
   --accent: #0d47a1;
   --code: #d81b60;
@@ -532,6 +532,13 @@ blockquote {
   margin: 1rem 0 1rem 1rem;
   padding: 0.02rem 0.8rem;
   border-left: 0.35rem solid var(--accent);
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.letter {
+  margin: 0rem 0 0rem 0rem;
+  padding: 0.02rem 0.8rem;
   color: var(--text-light);
   font-style: italic;
 }
