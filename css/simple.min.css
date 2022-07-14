@@ -7,35 +7,82 @@
   --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 
   /* Default (light) theme */
-  --bg: #fbf1c7;
-  --accent-bg: #f5f7ff;
-  --text: #282828;
-  --text-light: #444444;
-  --border: #ffccaa;
-  --accent: #0d47a1;
-  --code: #d81b60;
-  --preformatted: #444;
   --marked: #ffdd33;
   --disabled: #efefef;
-  --link: #689d6a;
-  --link-hover: #427b58;
+
+  /* Gruv Box */
+  --red: #cc341d;
+  --green: #98971a;
+  --yellow: #d79921;
+  --blue: #458588;
+  --purple: #b16286;
+  --aqua: #689d6a;
+  --orange: #d65d0e;
+  --gray: #928374;
+
+  --red-hard: #9d0006;
+  --green-hard: #79740e;
+  --yellow-hard: #b57614;
+  --blue-hard: #076678;
+  --purple-hard: #8f4f71;
+  --aqua-hard: #427b58;
+  --orange-hard: #af3a03;
+  --gray-hard: #7c6f64;
+
+  --bg: #fbf1c7;
+  --bg-hard: #f9f5d7;
+  --bg1: #ebdbb2;
+  --bg2: #d5c4a1;
+  --bg3: #bdae93;
+  --bg4: #a89984;
+  --bg-soft: #f2e5bc;
+
+  --fg: #3c3836;
+  --fg-hard: #282828;
+  --fg1: #504945;
+  --fg2: #665c54;
+  --fg3: #7c6f64;
 }
 
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --bg: #212121;
-    --accent-bg: #2b2b2b;
-    --text: #dcdcdc;
-    --text-light: #ababab;
-    --border: #666;
-    --accent: #ffb300;
-    --code: #f06292;
-    --preformatted: #ccc;
     --disabled: #111;
-    --link: #83a598;
-    --link-hover: #458588;
+
+    /* Gruv Box */
+    --red: #cc341d;
+    --green: #98971a;
+    --yellow: #d79921;
+    --blue: #458588;
+    --purple: #b16286;
+    --aqua: #689d6a;
+    --orange: #d65d0e;
+    --gray: #a89984;
+
+    --red-hard: #fb4934;
+    --green-hard: #b8bb26;
+    --yellow-hard: #fabd2f;
+    --blue-hard: #83a598;
+    --purple-hard: #d3869b;
+    --aqua-hard: #8ec07c;
+    --orange-hard: #fe8019;
+    --gray-hard: #928374;
+
+    --bg: #282828;
+    --bg-hard: #1d2021;
+    --bg1: #3c3836;
+    --bg2: #504945;
+    --bg3: #665c54;
+    --bg4: #7c6f64;
+    --bg-soft: #32302f;
+
+    --fg: #ebdbb2;
+    --fg-hard: #fbf1c7;
+    --fg1: #d5c4a1;
+    --fg2: #bdae93;
+    --fg3: #a89984;
+
   }
   /* Add a bit of transparancy so light media isn't so glaring in dark mode */
   img,
@@ -52,7 +99,7 @@ html {
 
 /* Make the body a nice central block */
 body {
-  color: var(--text);
+  color: var(--fg1);
   background: var(--bg);
   font-size: 1.15rem;
   line-height: 1.5;
@@ -67,8 +114,8 @@ body > * {
 
 /* Make the header bg full width, but the content inline with body */
 body > header {
-  background: var(--accent-bg);
-  border-bottom: 1px solid var(--border);
+  background: var(--bg3);
+  border-bottom: 1px solid var(--aqua);
   text-align: center;
   padding: 0 0.5rem 2rem 0.5rem;
   grid-column: 1 / -1;
@@ -100,25 +147,37 @@ main {
 body > footer {
   margin-top: 4rem;
   padding: 2rem 1rem 1.5rem 1rem;
-  color: var(--text-light);
+  color: var(--fg3);
   font-size: 0.9rem;
   text-align: center;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--aqua);
 }
 
 .card {
   /* Add shadows to create the "card" effect */
-  background-color: #fbf1c7;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
   transition: 0.3s;
   padding: 0.01rem 1rem;
   margin: 1rem 0rem;
+  border: 2px solid var(--fg3);
+  border-width: 1;
 }
 
-.card p {
-  /* Add shadows to create the "card" effect */
-  font-size: 2rem;
-  font-weight: bold;
+.card-content {
+  display: inline;
+  color: var(--fg3);
+  margin-block-start: 0rem;
+  margin-block-end: 0rem;
+}
+
+.card-title {
+  font-size: 2.6rem;
+  color: var(--purple);
+}
+
+.tag {
+  background-color: var(--bg);
+  font-size: 1.5rem;
+  color: var(--yellow);
 }
 /* On mouse-over, add a deeper shadow */
 .card:hover {
@@ -159,6 +218,11 @@ h3 {
   line-height: 1.1;
 }
 
+h1.title {
+  color: var(--fg1);
+  padding-bottom: 10px;
+}
+
 /* Reduce header size on mobile */
 @media only screen and (max-width: 720px) {
   h1 {
@@ -166,6 +230,10 @@ h3 {
   }
 
   h2 {
+    font-size: 2.1rem;
+  }
+
+  .card-title {
     font-size: 2.1rem;
   }
 
@@ -181,12 +249,12 @@ h3 {
 /* Format links & buttons */
 a,
 a:visited {
-  color: var(--link);
+  color: var(--purple);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--link-hover);
+  color: var(--purple-hard);
   text-decoration: none;
 }
 
@@ -198,7 +266,7 @@ input[type="button"],
 label[type="button"] {
   border: none;
   border-radius: 5px;
-  background: var(--accent);
+  background: var(--red);
   font-size: 1rem;
   color: var(--bg);
   padding: 0.7rem 0.9rem;
@@ -278,9 +346,9 @@ header > nav ol li {
 header > nav a,
 header > nav a:visited {
   margin: 0 1rem 1rem 0;
-  border: 1px solid var(--border);
+  border: 1px solid var(--aqua);
   border-radius: 5px;
-  color: var(--text);
+  color: var(--fg1);
   display: inline-block;
   padding: 0.1rem 1rem;
   text-decoration: none;
@@ -310,13 +378,13 @@ aside {
   padding: 0 15px;
   margin-left: 15px;
   float: right;
-  background: var(--accent-bg);
-  border: 1px solid var(--border);
+  background: var(--bg3);
+  border: 1px solid var(--aqua);
   border-radius: 5px;
 }
 
 article {
-  border: 1px solid var(--border);
+  border: 1px solid var(--aqua);
   padding: 1rem;
   border-radius: 5px;
 }
@@ -327,16 +395,16 @@ section h2:first-child {
 }
 
 section {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--aqua);
+  border-bottom: 1px solid var(--aqua);
   padding: 2rem 1rem;
   margin: 3rem 0;
 }
 
 /* Format the expanding box */
 details {
-  background: var(--accent-bg);
-  border: 1px solid var(--border);
+  background: var(--bg3);
+  border: 1px solid var(--aqua);
   border-radius: 5px;
   margin-bottom: 1rem;
 }
@@ -375,19 +443,19 @@ table {
 
 td,
 th {
-  border: 1px solid var(--border);
+  border: 1px solid var(--aqua);
   text-align: left;
   padding: 0.5rem;
 }
 
 th {
-  background: var(--accent-bg);
+  background: var(--bg3);
   font-weight: bold;
 }
 
 tr:nth-child(even) {
   /* Set every other cell slightly darker. Improves readability. */
-  background: var(--accent-bg);
+  background: var(--bg3);
 }
 
 table caption {
@@ -403,9 +471,9 @@ input {
   font-family: inherit;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
-  color: var(--text);
+  color: var(--fg1);
   background: var(--bg);
-  border: 1px solid var(--border);
+  border: 1px solid var(--aqua);
   border-radius: 5px;
   box-shadow: none;
   box-sizing: border-box;
@@ -441,7 +509,7 @@ input[type="radio"] {
 
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
-  background: var(--accent);
+  background: var(--red);
 }
 
 input[type="checkbox"]:checked::after {
@@ -499,7 +567,7 @@ input[type="file"] {
 
 /* Misc body elements */
 hr {
-  color: var(--border);
+  color: var(--aqua);
   border-top: 2px;
   margin: 1rem auto;
 }
@@ -524,28 +592,28 @@ figure {
 
 figcaption {
   font-size: 0.9rem;
-  color: var(--text-light);
+  color: var(--fg3);
   margin-bottom: 1rem;
 }
 
 blockquote {
   margin: 1rem 0 1rem 1rem;
   padding: 0.02rem 0.8rem;
-  border-left: 0.35rem solid var(--accent);
-  color: var(--text-light);
+  border-left: 0.35rem solid var(--red);
+  color: var(--fg3);
   font-style: italic;
 }
 
 .letter {
   margin: 0rem 0 0rem 0rem;
   padding: 0.02rem 0.8rem;
-  color: var(--text-light);
+  color: var(--fg3);
   font-style: italic;
 }
 
 cite {
   font-size: 0.9rem;
-  color: var(--text-light);
+  color: var(--fg3);
   font-style: normal;
 }
 
@@ -556,13 +624,13 @@ pre span,
 kbd,
 samp {
   font-family: var(--mono-font);
-  color: var(--code);
+  color: var(--bg2);
 }
 
 kbd {
-  color: var(--preformatted);
-  border: 1px solid var(--preformatted);
-  border-bottom: 3px solid var(--preformatted);
+  color: var(--bg2);
+  border: 1px solid var(--bg2);
+  border-bottom: 3px solid var(--bg2);
   border-radius: 5px;
   padding: 0.1rem 0.4rem;
 }
@@ -571,15 +639,15 @@ pre {
   padding: 1rem 1.4rem;
   max-width: 100%;
   overflow: auto;
-  color: var(--preformatted);
-  background: var(--accent-bg);
-  border: 1px solid var(--border);
+  color: var(--bg2);
+  background: var(--bg3);
+  border: 1px solid var(--aqua);
   border-radius: 5px;
 }
 
 /* Fix embedded code within pre */
 pre code {
-  color: var(--preformatted);
+  color: var(--bg2);
   background: none;
   margin: 0;
   padding: 0;
