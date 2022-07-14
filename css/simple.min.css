@@ -29,13 +29,13 @@
   --orange-hard: #af3a03;
   --gray-hard: #7c6f64;
 
-  --bg: #fbf1c7;
-  --bg-hard: #f9f5d7;
-  --bg1: #ebdbb2;
-  --bg2: #d5c4a1;
-  --bg3: #bdae93;
-  --bg4: #a89984;
-  --bg-soft: #f2e5bc;
+  --bg: #f7eee7;
+  --bg-hard: #fff7ee;
+  --bg1: #e7ddd7;
+  --bg2: #d7ccc7;
+  --bg3: #bbb7aa;
+  --bg4: #a79997;
+  --bg-soft: #eee7dd;
 
   --fg: #3c3836;
   --fg-hard: #282828;
@@ -77,12 +77,11 @@
     --bg4: #7c6f64;
     --bg-soft: #32302f;
 
-    --fg: #ebdbb2;
-    --fg-hard: #fbf1c7;
-    --fg1: #d5c4a1;
-    --fg2: #bdae93;
-    --fg3: #a89984;
-
+    --fg: #f7eee7;
+    --fg-hard: #fff7ee;
+    --fg1: #e7ddd7;
+    --fg2: #d7ccc7;
+    --fg3: #bbb7aa;
   }
   /* Add a bit of transparancy so light media isn't so glaring in dark mode */
   img,
