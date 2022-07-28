@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Digital Garden</title>
+<title>Lab 8</title>
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -201,18 +201,99 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Digital Garden</h1>
-<div id="outline-container-org46d2d2c" class="outline-2">
-<h2 id="org46d2d2c"><a href="short_stories.html">Short Stories</a></h2>
+<h1 class="title">Lab 8
+<br />
+<span class="subtitle">Intro. to Databases</span>
+</h1>
+<div id="outline-container-orgcc923e9" class="outline-2">
+<h2 id="orgcc923e9">Custom Data Types in Sql</h2>
+<div class="outline-text-2" id="text-orgcc923e9">
+<blockquote>
+<p>
+For  this lab,  I am  using postgresql,  here we  will create  a
+<code>ContactInfo</code>  datatype,  which   will  contain  three  attributes
+related to users contact info.
+</p>
+</blockquote>
 </div>
-<div id="outline-container-orga2790da" class="outline-2">
-<h2 id="orga2790da"><a href="blogs.html">Blogs</a></h2>
+
+<div id="outline-container-org22abce1" class="outline-3">
+<h3 id="org22abce1">Creating custom data type</h3>
+<div class="outline-text-3" id="text-org22abce1">
+<div class="org-src-container">
+<pre class="src src-sql">CREATE TYPE ContactInfo AS (
+		PhoneNo VARCHAR(16),
+		EmailId VARCHAR(30),
+		Telephone VARCHAR(16)
+);
+</pre>
 </div>
-<div id="outline-container-org08bdcb8" class="outline-2">
-<h2 id="org08bdcb8"><a href="movie_reviews.html">Movie Reviews</a></h2>
 </div>
-<div id="outline-container-orgeb7ed36" class="outline-2">
-<h2 id="orgeb7ed36"><a href="poems.html">Poems</a></h2>
+</div>
+
+<div id="outline-container-org8a01f2c" class="outline-3">
+<h3 id="org8a01f2c">Creating a table</h3>
+<div class="outline-text-3" id="text-org8a01f2c">
+<p>
+We will create <code>users</code> table, which  will use our custom data type
+<code>ContactInfo</code> as one of the attributes.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">CREATE TABLE users(
+       sid INTEGER,
+       name TEXT,
+       contactInfo ContactInfo
+);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga85b20a" class="outline-3">
+<h3 id="orga85b20a">Inserting data</h3>
+<div class="outline-text-3" id="text-orga85b20a">
+<p>
+In the table we  will insert few data, note here  we have to use
+encapsulate the <code>ContactInfo</code> data into round brackets and specify
+the arguments.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sql">INSERT INTO users VALUES
+       (1, 'Dhaval Patel', ('647-447-4477', 'dhaval@trentu.ca', '9999-9999')),
+       (2, 'Jane Doe', ('647-447-4499', 'janedoe@trentu.ca', '9999-9999')),
+       (3, 'John Doe', ('647-447-4488', 'johndoe@trentu.ca', '9999-9999')),
+       (4, 'Hercule Poirot', ('647-447-0000', 'hpoirot@trentu.ca', '9999-9999'));
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8daa9f4" class="outline-3">
+<h3 id="org8daa9f4">Querying the data</h3>
+<div class="outline-text-3" id="text-org8daa9f4">
+<p>
+We can use  simple querys to fetch the data,  however to execute
+any kind of complex query on <code>ContactInfo</code> data, we have to define
+member functions inside the data type itself.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT * FROM users;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org50c1fea" class="outline-3">
+<h3 id="org50c1fea">Screenshot</h3>
+<div class="outline-text-3" id="text-org50c1fea">
+
+<div id="org5feb16f" class="figure">
+<p><img src="./lab8.png" alt="lab8.png" width="800px" />
+</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </body>
